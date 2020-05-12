@@ -31,9 +31,10 @@
               Generate
             </button>
           </div>
-          <div class="form-group">
-            <label>Your Password</label>
-            <input class="form-control" [value]="password" type="text" />
+          <div class="card mt-3" *ngIf="password">
+            <div class="card-body text-center">
+              {{ password }}
+            </div>
           </div>
         </div>
       </div>
