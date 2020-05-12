@@ -1,29 +1,42 @@
-<h1>Password Generator</h1>
-<div>
-  <label>Desired Length</label>
-  <input (input)="onChangeLength($event.target.value)" type="text" />
-</div>
-<div>
-  <label>Use Letters</label>
-  <input (change)="onChangeLetters()" type="checkbox" />
-</div>
-<div>
-  <label>Use Numbers</label>
-  <input (change)="onChangeNumbers()" type="checkbox" />
-</div>
-<div>
-  <label>Use Symbols</label>
-  <input (change)="onChangeSymbols()" type="checkbox" />
-</div>
-<div>
-  <button 
-    [disabled]="!(length && (useLetters || useNumbers || useSymbols))"
-    (click)="onButtonClick()"
-  >
-    Generate
-  </button>
-</div>
-<div>
-  <label>Your Password</label>
-  <input [value]="password" type="text" />
+<div class="container mt-3">
+  <div class="row ">
+    <div class="col-md">
+      <div class="card w-50 mx-auto">
+        <div class="card-body">
+          <h1 class="card-title">Password Generator</h1>
+          <div class="form-group">
+            <label>Desired Length</label>
+            <input (input)="onChangeLength($event.target.value)" class="form-control" type="text" />
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input (change)="onChangeLetters()" class="form-check-input" type="checkbox" id="useLetters" />
+              <label for="useLetters" class="form-check-label">Use Letters</label>
+            </div>
+            <div class="form-check">
+              <input (change)="onChangeNumbers()" class="form-check-input" type="checkbox" id="useNumbers" />
+              <label for="useNumbers" class="form-check-label">Use Numbers</label>
+            </div>
+            <div class="form-check">
+              <input (change)="onChangeSymbols()" class="form-check-input" type="checkbox" id="useSymbols" />
+              <label for="useSymbols" class="form-check-label">Use Symbols</label>
+            </div>
+          </div>
+          <div>
+            <button
+              class="btn btn-success"
+              [disabled]="!(length && (useLetters || useNumbers || useSymbols))"
+              (click)="onButtonClick()"
+            >
+              Generate
+            </button>
+          </div>
+          <div class="form-group">
+            <label>Your Password</label>
+            <input class="form-control" [value]="password" type="text" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
